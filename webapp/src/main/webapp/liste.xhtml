@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+    	<link href="style.css" rel="stylesheet" type="text/css" />
+        <title>Annuaire</title>
+    </h:head>
+    <h:body>
+    	<f:view>
+    		<ul>
+				<li>
+					<h:form>
+						<h:commandLink action="toHome">
+					  		<h:outputText value="Home"/>
+						</h:commandLink>
+					</h:form>
+				</li>
+				<li>
+					<h:form>
+						<h:commandLink action="toCreate">
+					  		<h:outputText value="Ajouter une personne"/>
+						</h:commandLink>
+					</h:form>
+				</li>
+			</ul>
+			<h:dataTable value="#{personneCtrl.personnedao.personnes}" var="p">
+				<h:column>
+					<f:facet name="header">
+			            <h:outputText value="Identifiant" />
+			        </f:facet>
+					<h:outputText value="#{p.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+			            <h:outputText value="Prénom" />
+			        </f:facet>
+					<h:outputText value="#{p.forename}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+			            <h:outputText value="Nom" />
+			        </f:facet>
+					<h:outputText value="#{p.surname}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+			            <h:outputText value="Date de naissance" />
+			        </f:facet>
+					<h:outputText value="#{p.naissance}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+			            <h:outputText value="Options" />
+			        </f:facet>
+			      <h:form>
+						<h:commandLink action="#{personneCtrl.showModify}">
+					  		<h:outputText value="update"/>
+					  		<f:param name="id" value="#{p.id}" />
+			         		<f:param name="prenom" value="#{p.forename}" />
+			        		<f:param name="nom" value="#{p.surname}" />
+			        		<f:param name="naissance" value="#{p.naissance}" />
+						</h:commandLink>
+					</h:form>
+				</h:column>
+			</h:dataTable>
+    	</f:view>
+    </h:body>
+</html>

@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: white;
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#titre {
+	color: blue;
+	font-family: Arial Black, sans-serif;
+    border-bottom: 2px solid blue;
+}
+.texte {
+	font-size: 11pt;
+	text-align: justify;
+}

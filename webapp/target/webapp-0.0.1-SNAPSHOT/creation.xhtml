@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+    	<link href="style.css" rel="stylesheet" type="text/css" />
+        <title>Annuaire</title>
+    </h:head>
+    <h:body>
+    	<f:view>
+    		<ul>
+				<li>
+					<h:form>
+						<h:commandLink action="toHome">
+					  		<h:outputText value="Home"/>
+						</h:commandLink>
+					</h:form>
+				</li>
+				<li>
+					<h:form>
+						<h:commandLink action="toList">
+					  		<h:outputText value="Liste des personnes"/>
+						</h:commandLink>
+					</h:form>
+				</li>
+			</ul>
+			<h:form>
+				<h:outputLabel id="fieldLabelID" for="fieldID" value="Prénom : " />
+				<h:inputText id="fieldID" value="#{personneManager.personne.forename}" />
+				<br></br>
+				<h:outputLabel id="fieldLabelID2" for="fieldID2" value="Nom : " />
+				<h:inputText id="fieldID2" value="#{personneManager.personne.surname}" />
+				<br></br>
+				<h:outputLabel id="fieldLabelID3" for="fieldID3" value="Date de naissance : " />
+				<h:inputText id="fieldID3" value="#{personneManager.personne.naissance}" >
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:inputText>
+				<br></br>
+				<h:commandButton value="Valider" action="#{personneManager.ajouterPersonne()}" />
+			</h:form>
+    	</f:view>
+    </h:body>
+</html>
