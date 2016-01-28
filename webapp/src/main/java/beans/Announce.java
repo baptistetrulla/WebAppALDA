@@ -1,6 +1,6 @@
 package beans;
 
-public class Announce {
+public class Announce implements java.io.Serializable{
 
 	private int id;
 	private float price;

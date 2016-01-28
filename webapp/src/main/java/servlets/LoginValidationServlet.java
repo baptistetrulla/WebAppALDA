@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Announce;
 import beans.Person;
 import controls.PersonCtrl;
+import dao.AnnounceDAO;
 import dao.PersonDAO;
 
 /**
@@ -58,11 +61,16 @@ public class LoginValidationServlet extends HttpServlet {
 			Person p = new Person();
 			p = pDao.getPersonByEmailAndPassword(request.getParameter("email"), request.getParameter("password"));
 			request.getSession().setAttribute("userID", p.getId());
+			request.getSession().setAttribute("user", p);
+
 			if (p.getEmail() == null)
 				dispatcher = request.getRequestDispatcher("login.jsp");
-			else
+			else{
+				AnnounceDAO aDao = new AnnounceDAO();
+				List<Announce> allAnnounces = aDao.getAllAnnounces();
+				request.getSession().setAttribute("recentSales", allAnnounces);
 				dispatcher = request.getRequestDispatcher("search.jsp");
-
+			}
 			dispatcher.forward(request, response);
 		}
 
