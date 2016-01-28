@@ -18,3 +18,7 @@ h1 {
 	font-size: 11pt;
 	text-align: justify;
 }
+
+.carousel {
+	height: 480px;
+}
