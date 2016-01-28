@@ -15,12 +15,11 @@
 	<div class="container">
 		<h1 class="title-form">Détails de l'annonce</h1>
 		
-	    <input type="hidden" name="uploadedPhotoPath1" id="uploadedPhotoPath1" value="${sale.photo1Path}" />
-        <input type="hidden" name="uploadedImageName1" id="uploadedImageName1" value="${sale.photo1Name}" />
-        <input type="hidden" name="edit1" value="true" />
-        <input type="hidden" name="uploadedPhotoPath2" id="uploadedPhotoPath2" value="${sale.photo2Path}" />
-        <input type="hidden" name="uploadedImageName2" id="uploadedImageName2" value="${sale.photo2Name}" />
-        <input type="hidden" name="edit2" value="true" />
+		<h3>
+		    <a href="#" onclick="showProfile(${sale.userId})">
+	    	    <c:out value="${sale.userFirstname} ${sale.userLastname}"/>
+	        </a>
+	    </h3>
 		
 		<h3>Prix : ${sale.price}</h3>
 		
@@ -80,8 +79,11 @@
    	<script type="text/javascript" src="./js/app.js"></script>
    	
    	<script type="text/javascript">
-   	  var buy = function(id){
+   	  var buy = function(saleId){
    		  //GET avec l'id en paramètre sur la servlet BuyStepOne. Va sur login si non-connecté
    	  }
+   	  var showProfile = function(userId){
+ 		  //GET avec l'id en paramètre sur la servlet Profile. Va sur login si non-connecté
+ 	  }
    	</script>
 </body>
