@@ -59,6 +59,39 @@ public class AnnounceDAO {
 		return announces;
 	}
 
+	public Announce getAnnounce(int announceId) {
+		ResultSet result = null;
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.announce WHERE announce.id='" + announceId + "';";
+		Announce announce = new Announce();
+
+		try {
+			statement = connectiondb.getConnection().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+
+				announce.setId(result.getInt(1));
+				announce.setPrice(Float.parseFloat("" + result.getInt(2)));
+				announce.setType(result.getString(3));
+				announce.setSurface(Float.parseFloat("" + result.getString(4)));
+				announce.setAddress(result.getString(5));
+				announce.setCity(result.getString(6));
+				announce.setDescription(result.getString(7));
+
+				if (result.getString(8).equals("false"))
+					announce.setExpired(false);
+				else
+					announce.setExpired(true);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return announce;
+	}
+
 	public void insertAnnounce(Announce a) {
 		Statement statement = null;
 		String request = "INSERT INTO javaee.announce(price, type, surface, address, city, description, expired) "

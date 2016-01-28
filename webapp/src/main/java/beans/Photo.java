@@ -1,6 +1,6 @@
 package beans;
 
-public class Photo {
+public class Photo implements java.io.Serializable{
 
 	private int id;
 	private String dir;

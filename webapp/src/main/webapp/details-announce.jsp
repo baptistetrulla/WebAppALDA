@@ -15,11 +15,11 @@
 	<div class="container">
 		<h1 class="title-form">Détails de l'annonce</h1>
 		
-		<h3>
-		    <a href="#" onclick="showProfile(${sale.userId})">
-	    	    <c:out value="${sale.userFirstname} ${sale.userLastname}"/>
-	        </a>
-	    </h3>
+<!-- 		<h3> -->
+<%-- 		    <a href="#" onclick="showProfile(${sale.userId})"> --%>
+<%-- 	    	    <c:out value="${sale.userFirstname} ${sale.userLastname}"/> --%>
+<!-- 	        </a> -->
+<!-- 	    </h3> -->
 		
 		<h3>Prix : ${sale.price}</h3>
 		
@@ -49,12 +49,12 @@
 		    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 			  <c:if test="${loopStatus.index == 0}">  
 			    <div class="item active">
-			      <img src="/assets/${photo.name}" alt="Photo">
+			      <img src="/assets/${photo.dir}" alt="Photo">
 			    </div>
 			  </c:if>
 			  <c:if test="${loopStatus.index > 0}">
 			    <div class="item">
-			      <img src="assets/${photo.name}" alt="Photo">
+			      <img src="/assets/${photo.dir}" alt="Photo">
 			    </div>
 			  </c:if>
 		    </c:forEach>

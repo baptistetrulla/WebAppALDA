@@ -1,6 +1,9 @@
 package beans;
 
-public class Announce implements java.io.Serializable{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Announce implements java.io.Serializable {
 
 	private int id;
 	private float price;
@@ -10,6 +13,8 @@ public class Announce implements java.io.Serializable{
 	private String city;
 	private String description;
 	private boolean expired;
+
+	private List<Photo> photos = new ArrayList<Photo>();
 
 	public Announce() {
 		this.price = 0;
@@ -22,7 +27,8 @@ public class Announce implements java.io.Serializable{
 
 	};
 
-	public Announce(float price, String type, float surface, String address, String city, String description, boolean expired) {
+	public Announce(float price, String type, float surface, String address, String city, String description,
+			boolean expired) {
 		this.price = price;
 		this.type = type;
 		this.surface = surface;
@@ -95,6 +101,14 @@ public class Announce implements java.io.Serializable{
 
 	public void setExpired(boolean expired) {
 		this.expired = expired;
+	}
+
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
 	}
 
 }
