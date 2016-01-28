@@ -1,15 +1,19 @@
-@CHARSET "UTF-8";
-
 body {
-	background-color: white;
-	color: black;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 100%;
+	color: #282830;
 }
-#titre {
-	color: blue;
-	font-family: Arial Black, sans-serif;
-    border-bottom: 2px solid blue;
+.container {
+	width: 980px;
+	margin: auto;
+	background-color: #E7E7E7;
 }
+
+h1 {
+	color: #60646D;
+    border-bottom: 2px solid #60646D;
+    text-align: center;
+}
+
 .texte {
 	font-size: 11pt;
 	text-align: justify;
