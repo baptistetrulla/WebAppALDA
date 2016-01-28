@@ -25,12 +25,12 @@ public class Main {
 		FavoriteAnnounceDAO faDao = new FavoriteAnnounceDAO();
 		FavoriteAnnounceCtrl faCtrl = new FavoriteAnnounceCtrl();
 		// ----------- ADD A PERSON ----------
-		Person p = new Person("baptiste", "tru", "bap.tru@gmail.com", "password", "baptistetru", "9 rue du perche",
-				"saint léo", "0255555555", false);
+//		Person p = new Person("baptiste", "tru", "bap.tru@gmail.com", "password", "baptistetru", "9 rue du perche",
+//				"saint léo", "0255555555", false);
 		Person p2 = new Person("baptiste", "tru", "bap.tru@gmail2.com", "password", "baptistetru2", "654 rue du perche",
 				"saint ", "0255454545", true);
 		pCtrl.setPerson(p2);
-//		 pCtrl.savePerson();
+		 pCtrl.savePerson();
 //		pCtrl.setPerson(p2);
 //		pCtrl.updatePerson();
 		// -----------------------------------
@@ -52,9 +52,9 @@ public class Main {
 		FavoriteAnnounce fa = new FavoriteAnnounce(1, 5);
 		FavoriteAnnounce fa2 = new FavoriteAnnounce(5, 5);
 				 faCtrl.setFavoriteAnnounce(fa);
-				 faCtrl.saveFavoriteAnnounce();
+//				 faCtrl.saveFavoriteAnnounce();
 				 faCtrl.setFavoriteAnnounce(fa2);
-				 faCtrl.saveFavoriteAnnounce();
+//				 faCtrl.saveFavoriteAnnounce();
 
 		// aCtrl.updateAnnounce();
 		// -----------------------------------
