@@ -56,10 +56,7 @@
 		</form>
 		<c:choose>
 			<c:when test="${empty recentSales}">
-				<script type="text/javascript">
-					$('#filter-row').addClass('hide');
-				</script>
-				<h3 align="center">Aucune vente ne correspond actuellement à vos critères de recherche.</h3>
+				<h3 align="center">Aucune vente ne correspond actuellement à vos critères de recherche</h3>
 				<h3 align="center"><a href="/Sales">Voir toutes les autres ?</a></h3>
 			</c:when>
 			<c:otherwise>
@@ -105,9 +102,11 @@
 									  </a>
 								  </div>
 							      <div class="caption">
-							        <h3>Thumbnail label</h3>
-							        <p>...</p>
-							        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							        <h3>Prix : ${sale.price}</h3>
+									<h3>Type : ${sale.type}</h3>
+									<h3>Surface : ${sale.surface}</h3>
+									<h3>Adresse : ${sale.address}</h3>
+									<h3>Ville : ${sale.city}</h3>
 							      </div>
 							    </div>
 							</div>
@@ -157,9 +156,11 @@
 									  </a>
 								  </div>
 							      <div class="caption">
-							        <h3>Thumbnail label</h3>
-							        <p>...</p>
-							        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+							        <h3>Prix : ${sale.price}</h3>
+									<h3>Type : ${sale.type}</h3>
+									<h3>Surface : ${sale.surface}</h3>
+									<h3>Adresse : ${sale.address}</h3>
+									<h3>Ville : ${sale.city}</h3>
 							      </div>
 							    </div>
 							</div>
