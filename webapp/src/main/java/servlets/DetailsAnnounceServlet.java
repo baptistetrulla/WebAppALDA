@@ -21,7 +21,7 @@ import dao.PhotoDAO;
 /**
  * Servlet implementation class DetailsAnnounceServlet
  */
-@WebServlet("/DetailsAnnounceServlet")
+@WebServlet("/DetailsAnnounce")
 public class DetailsAnnounceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -54,13 +54,11 @@ public class DetailsAnnounceServlet extends HttpServlet {
 		request.getSession().setAttribute("sale", announce);
 		
 		PersonDAO perDao = new PersonDAO();
-		System.out.println("id = " + announce.getId());
 		Person p = perDao.getPersonByID(announce.getUserID());
 		
 		request.getSession().setAttribute("vendor", p);
 		
-		dispatcher = request.getRequestDispatcher("details-announce.jsp");
-		dispatcher.forward(request, response);
+		request.getRequestDispatcher("details-announce.jsp").forward(request, response);
 
 	}
 
@@ -70,7 +68,6 @@ public class DetailsAnnounceServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
