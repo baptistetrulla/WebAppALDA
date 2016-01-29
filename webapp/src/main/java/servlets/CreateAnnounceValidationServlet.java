@@ -56,7 +56,7 @@ public class CreateAnnounceValidationServlet extends HttpServlet {
 				String description = "" + request.getParameter("description");
 
 				AnnounceDAO aDao = new AnnounceDAO();
-				Announce a = new Announce(price, type, surface, address, city, description, false);
+				Announce a = new Announce(price, type, surface, address, city, description, false, (int)request.getSession().getAttribute("userID"));
 
 				aDao.insertAnnounce(a);
 
