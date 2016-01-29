@@ -17,10 +17,10 @@ public class AccountServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if(req.getSession() == null || req.getSession().getAttribute("user") == null)
+		if (req.getSession() == null || req.getSession().getAttribute("user") == null)
 			req.getRequestDispatcher("/Login").forward(req, resp);
-		
-		req.getRequestDispatcher("./account.jsp").forward(req, resp);
+		else
+			req.getRequestDispatcher("./account.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -28,5 +28,4 @@ public class AccountServlet extends HttpServlet {
 		doGet(req, resp);
 	}
 
-	
 }

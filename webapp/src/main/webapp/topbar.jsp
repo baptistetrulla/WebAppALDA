@@ -14,7 +14,7 @@
           <c:choose>
             <c:when test="${not empty userID}">
 	          <ul class="dropdown-menu" id="connected-user">
-	            <li><a href="#" onclick="createAnnounce()">Créer une annonce</a></li>
+	            <li><a href="CreateAnnounceServlet">Créer une annonce</a></li>
 	            <li><a href="#" onclick="showProfile(${user.id})">Mes annonces</a></li>
 	            <li><a href="#" onclick="showFavorites(${user.id})">Mes favoris</a></li>
 	            <li><a href="#" onclick="showMessages()">Mes messages</a></li>
