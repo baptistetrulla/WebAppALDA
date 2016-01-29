@@ -21,6 +21,9 @@
 <!-- 	        </a> -->
 <!-- 	    </h3> -->
 		
+<!-- 		<h3> -->
+<%-- 		    <a href="#" onclick="showProfile(${sale.userId})">${sale.username}</a> --%>
+<!-- 	    </h3> -->
 		<h3>Prix : ${sale.price}</h3>
 		
 		<h3>Type : ${sale.type}</h3>
