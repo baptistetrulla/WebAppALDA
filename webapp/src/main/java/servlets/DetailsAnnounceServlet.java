@@ -49,7 +49,6 @@ public class DetailsAnnounceServlet extends HttpServlet {
 
 		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("announceId")));
 		announce.setPhotos(photos);
-		System.out.println(photos.get(1).getDir());
 		request.getSession().setAttribute("sale", announce);
 		dispatcher = request.getRequestDispatcher("details-announce.jsp");
 		dispatcher.forward(request, response);
