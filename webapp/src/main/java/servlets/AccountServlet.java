@@ -11,19 +11,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet("/Logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/Account")
+public class AccountServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession session = req.getSession(false);
-		if (session != null) {
-		    session.invalidate();
-		}
+		if(req.getSession() == null || req.getSession().getAttribute("user") == null)
+			req.getRequestDispatcher("/Login").forward(req, resp);
 		
-		req.getRequestDispatcher("/Index").forward(req, resp);
+		req.getRequestDispatcher("./account.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -31,4 +28,5 @@ public class LogoutServlet extends HttpServlet {
 		doGet(req, resp);
 	}
 
+	
 }

@@ -31,7 +31,7 @@ public class FavoriteAnnounceDAO {
 		List<FavoriteAnnounce> favoriteFavoriteAnnounces = new ArrayList<FavoriteAnnounce>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -57,7 +57,7 @@ public class FavoriteAnnounceDAO {
 		List<FavoriteAnnounce> favoriteFavoriteAnnounces = new ArrayList<FavoriteAnnounce>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -88,12 +88,12 @@ public class FavoriteAnnounceDAO {
 
 		try {
 
-			statement1 = connectiondb.getConnection().prepareStatement(requestGET);
+			statement1 = connectiondb.getInstance().prepareStatement(requestGET);
 			statement1.execute(requestGET);
 			result = statement1.getResultSet();
 
 			if (!result.next()) {
-				statement2 = connectiondb.getConnection().createStatement();
+				statement2 = connectiondb.getInstance().createStatement();
 				statement2.executeUpdate(requestINSERT);
 			}
 
@@ -108,7 +108,7 @@ public class FavoriteAnnounceDAO {
 				+ fa.getAnnounceID() + "';";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 			System.out.println("Update completed.");
 

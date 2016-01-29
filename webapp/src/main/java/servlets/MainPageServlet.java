@@ -1,13 +1,9 @@
-/**
- * 
- */
 package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +17,7 @@ import dao.AnnounceDAO;
 import dao.PersonDAO;
 import dao.PhotoDAO;
 
-@WebServlet("/")
+@WebServlet("/Index")
 public class MainPageServlet extends HttpServlet {
 
 	@Override
@@ -39,7 +35,7 @@ public class MainPageServlet extends HttpServlet {
 		}
 
 		req.getSession().setAttribute("recentSales", allAnnounces);
-		req.getRequestDispatcher("search.jsp").forward(req, resp);
+		req.getRequestDispatcher("/search.jsp").forward(req, resp);
 	}
 
 	@Override

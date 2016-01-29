@@ -29,7 +29,7 @@ public class PersonDAO {
 		List<Person> persons = new ArrayList<Person>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -69,7 +69,7 @@ public class PersonDAO {
 				+ password + "';";
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -106,7 +106,7 @@ public class PersonDAO {
 				+ "'," + " '" + p.getCity() + "', '" + p.getCellnumber() + "', '" + p.isAdmin() + "');";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 
 		} catch (SQLException e) {
@@ -123,7 +123,7 @@ public class PersonDAO {
 				+ p.getCellnumber() + "', admin='" + p.isAdmin() + "' WHERE person.email='" + p.getEmail() + "';";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			System.out.println(request);
 			statement.executeUpdate(request);
 			System.out.println("Update completed.");

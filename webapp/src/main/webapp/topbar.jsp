@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container" style="background-color: #f8f8f8;">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/Index">
         <img class="home-icon" alt="Accueil" src="./assets/home.svg">
       </a>
     </div>
@@ -19,7 +19,7 @@
 	            <li><a href="#" onclick="showFavorites(${user.id})">Mes favoris</a></li>
 	            <li><a href="#" onclick="showMessages()">Mes messages</a></li>
 	            <li><a href="#" onclick="showNotifications()">Mes notifications</a></li>
-	            <li><a href="#" onclick="showAccount()">Mon compte</a></li>
+	            <li><a href="/Account">Mon compte</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="/Logout">Se déconnecter</a></li>
 	          </ul>

@@ -31,7 +31,7 @@ public class AnnounceDAO {
 		List<Announce> announces = new ArrayList<Announce>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -66,7 +66,7 @@ public class AnnounceDAO {
 		Announce announce = new Announce();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -99,7 +99,7 @@ public class AnnounceDAO {
 				+ a.getAddress() + "', '" + a.getCity() + "', '" + a.getDescription() + "', '" + a.isExpired() + "');";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 
 		} catch (SQLException e) {
@@ -116,7 +116,7 @@ public class AnnounceDAO {
 				+ "', description='" + a.getDescription() + "' WHERE announce.id='" + a.getId() + "';";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 			System.out.println("Update completed.");
 

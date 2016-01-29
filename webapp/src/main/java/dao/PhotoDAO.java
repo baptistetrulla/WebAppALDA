@@ -31,7 +31,7 @@ public class PhotoDAO {
 		List<Photo> photos = new ArrayList<Photo>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -58,7 +58,7 @@ public class PhotoDAO {
 		List<Photo> photos = new ArrayList<Photo>();
 
 		try {
-			statement = connectiondb.getConnection().prepareStatement(request);
+			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
 			result = statement.getResultSet();
 
@@ -84,7 +84,7 @@ public class PhotoDAO {
 				+ p.getAnnounceID() + "', '" + p.getText() + "');";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 
 		} catch (SQLException e) {
@@ -100,7 +100,7 @@ public class PhotoDAO {
 				+ "', text='" + p.getText() + " WHERE photo.id='" + p.getId() + "';";
 
 		try {
-			statement = connectiondb.getConnection().createStatement();
+			statement = connectiondb.getInstance().createStatement();
 			statement.executeUpdate(request);
 			System.out.println("Update completed.");
 
