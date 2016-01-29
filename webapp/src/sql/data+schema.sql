@@ -107,7 +107,7 @@ CREATE TABLE `person` (
 
 LOCK TABLES `person` WRITE;
 /*!40000 ALTER TABLE `person` DISABLE KEYS */;
-INSERT INTO `person` VALUES (1,'bob@email.com','password','bob','kelso','bobby','1 rue de la longue vue','Bordeaux','0222222222','0'),(2,'jean@email.com','password','jean','dugrenier','jeandu','25 rue de la peur','Bordeaux','0225222222','0'),(3,'jenny@email.com','password','jenny','delabatte','jenny0123tedt','1 rue de la grande dame','Lyon','0222222292','false');
+INSERT INTO `person` VALUES (1,'bob@email.com','password','bob','kelso','bobby','1 rue de la longue vue','Bordeaux','0222222222','true'),(2,'jean@email.com','password','jean','dugrenier','jeandu','25 rue de la peur','Bordeaux','0225222222','false'),(3,'jenny@email.com','password','jenny','delabatte','jenny0123tedt','1 rue de la grande dame','Lyon','0222222292','false');
 /*!40000 ALTER TABLE `person` ENABLE KEYS */;
 UNLOCK TABLES;
 
