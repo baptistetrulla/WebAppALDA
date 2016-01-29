@@ -71,7 +71,8 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+									<button type="button" class="btn btn-primary" href="DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
+									<button type="button" class="btn btn-success" href="AddFavoriteAnnounce?saleid=${sale.id}">Favoris</button>
 							      </div>
 							    </div>
 							</div>
@@ -126,7 +127,8 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+									<button type="button" class="btn btn-primary" href="DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
+									<button type="button" class="btn btn-success" href="AddFavoriteAnnounce?saleid=${sale.id}">Favoris</button>
 							      </div>
 							    </div>
 							</div>
