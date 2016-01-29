@@ -60,6 +60,43 @@ public class AnnounceDAO {
 		}
 		return announces;
 	}
+	
+	public List<Announce> getAnnouncesExpired() {
+		ResultSet result = null;
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.announce WHERE announce.expired = 1";
+		List<Announce> announces = new ArrayList<Announce>();
+
+		try {
+			statement = connectiondb.getInstance().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+
+				Announce announce = new Announce();
+				announce.setId(result.getInt(1));
+				announce.setPrice(Float.parseFloat("" + result.getInt(2)));
+				announce.setType(result.getString(3));
+				announce.setSurface(Float.parseFloat("" + result.getString(4)));
+				announce.setAddress(result.getString(5));
+				announce.setCity(result.getString(6));
+				announce.setDescription(result.getString(7));
+
+				if (result.getString(8).equals("false"))
+					announce.setExpired(false);
+				else
+					announce.setExpired(true);
+				
+				announce.setUserID(result.getInt(9));
+
+				announces.add(announce);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return announces;
+	}
 
 	public Announce getAnnounce(int announceId) {
 		ResultSet result = null;
