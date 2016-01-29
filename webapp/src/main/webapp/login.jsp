@@ -16,7 +16,7 @@
 		<h1 class="title-form">Authentification</h1>
 		
 		<form method="POST" id="login-form" class="form-signin" action="/LoginValidationServlet">
-			<h3 class="form-signin-heading">Identifiez vous</h2>
+			<h3 class="form-signin-heading">Identifiez vous</h3>
 			
 			<input type="text" class="form-control" name="email" id="email" placeholder="Email" required autofocus/>
 			<input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" required/>

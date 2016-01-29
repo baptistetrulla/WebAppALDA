@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+	
 	<div class="container">
 		<h1 class="title-form">Ventes globales</h1>
 		
@@ -60,7 +63,7 @@
 				<h3 align="center">Aucune vente ne correspond actuellement à vos critères de recherche</h3>
 			</c:when>
 			<c:otherwise>
-				<div class="hidden-xs hidden-sm col-md-5 no-pad" id="left-side">
+				<div class="col-xs-12 col-md-6" id="left-side">
 	   				<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
 						<c:if test="${loopStatus.index % 2 == 0}">
 						    <div class="row">
@@ -107,6 +110,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
+									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
 							      </div>
 							    </div>
 							</div>
@@ -114,7 +118,7 @@
 					</c:forEach>
 				</div>
 				
-				<div class="col-md-5 no-pad" id="right-side">
+				<div class="col-xs-12 col-md-6" id="right-side">
 					<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
 						<c:if test="${loopStatus.index % 2 != 0}">
 						    <div class="row">
@@ -161,6 +165,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
+									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
 							      </div>
 							    </div>
 							</div>

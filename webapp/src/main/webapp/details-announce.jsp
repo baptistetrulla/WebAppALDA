@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+	
+	<jsp:include page="./topbar.jsp"></jsp:include>
+
 	<div class="container">
 		<h1 class="title-form">Détails de l'annonce</h1>
 		
@@ -81,12 +84,4 @@
    	<script type="text/javascript" src="./lib/cropper.min.js"></script>
    	<script type="text/javascript" src="./js/app.js"></script>
    	
-   	<script type="text/javascript">
-   	  var buy = function(saleId){
-   		  //GET avec l'id en paramètre sur la servlet BuyStepOne. Va sur login si non-connecté
-   	  }
-   	  var showProfile = function(userId){
- 		  //GET avec l'id en paramètre sur la servlet Profile. Va sur login si non-connecté
- 	  }
-   	</script>
 </body>

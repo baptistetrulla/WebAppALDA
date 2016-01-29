@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+
 	<div class="container">
 		<h1 class="title-form">Création d'une annonce</h1>
 		
@@ -139,4 +142,5 @@
    	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    	<script type="text/javascript" src="./lib/cropper.min.js"></script>
    	<script type="text/javascript" src="./js/app.js"></script>
+   	<script type="text/javascript" src="./js/crop-photo.js"></script>
 </body>

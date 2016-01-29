@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+	
 	<div class="container">
 		<h1 class="title-form">Modification d'une annonce</h1>
 		<button class="btn btn-lg btn-warning" href="/DeleteAnnounceServlet">Supprimer cette annonce</button>
@@ -140,4 +143,5 @@
    	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    	<script type="text/javascript" src="./lib/cropper.min.js"></script>
    	<script type="text/javascript" src="./js/app.js"></script>
+   	<script type="text/javascript" src="./js/crop-photo.js"></script>
 </body>

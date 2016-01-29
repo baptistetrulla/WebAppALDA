@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+
 	<div class="container">
 		<h1 class="title-form">Profil de l'utilisateur</h1>
 		
@@ -77,6 +80,7 @@
 										<h3>Surface : ${sale.surface}</h3>
 										<h3>Adresse : ${sale.address}</h3>
 										<h3>Ville : ${sale.city}</h3>
+										<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
 								      </div>
 								    </div>
 								</div>
@@ -131,6 +135,7 @@
 										<h3>Surface : ${sale.surface}</h3>
 										<h3>Adresse : ${sale.address}</h3>
 										<h3>Ville : ${sale.city}</h3>
+										<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
 								      </div>
 								    </div>
 								</div>

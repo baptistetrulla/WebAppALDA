@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+	
 	<div class="container">
 		<h1 class="title-form">Informations sur votre compte</h1>
 		<button class="btn btn-lg btn-warning" href="/DeleteAccountServlet">Supprimer votre compte</button>

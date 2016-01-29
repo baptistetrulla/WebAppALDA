@@ -12,6 +12,9 @@
 	
 </head>
 <body>
+
+	<jsp:include page="./topbar.jsp"></jsp:include>
+
 	<div class="container">
 		<h1 class="title-form">Informations sur la transaction</h1>
 		
@@ -84,9 +87,4 @@
    	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    	<script type="text/javascript" src="./js/app.js"></script>
    	
-   	<script type="text/javascript">
-   		var validatePayment = function(saleId) {
-   			// POST sur la servlet ConfirmPaymentServlet 
-   		}
-   	</script>
 </body>
