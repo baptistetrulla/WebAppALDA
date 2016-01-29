@@ -20,7 +20,7 @@ import dao.AnnounceDAO;
 import dao.PersonDAO;
 import dao.PhotoDAO;
 
-@WebServlet("/ProfileServlet")
+@WebServlet("/Profile")
 public class ProfileServlet extends HttpServlet {
 
 	@Override
