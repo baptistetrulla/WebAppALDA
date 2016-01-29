@@ -1,7 +1,3 @@
-var logoff = function() {
-	
-};
-
 var createAnnounce = function() {
 	
 };

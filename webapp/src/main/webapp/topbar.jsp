@@ -21,7 +21,7 @@
 	            <li><a href="#" onclick="showNotifications()">Mes notifications</a></li>
 	            <li><a href="#" onclick="showAccount()">Mon compte</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a href="#" onclick="logoff()">Se déconnecter</a></li>
+	            <li><a href="/Logout">Se déconnecter</a></li>
 	          </ul>
 	        </c:when>
 	        <c:otherwise>
