@@ -13,7 +13,7 @@ import dao.PersonDAO;
 /**
  * Servlet implementation class DeleteAccountServlet
  */
-@WebServlet("/DeleteAccountServlet")
+@WebServlet("/DeleteAccount")
 public class DeleteAccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

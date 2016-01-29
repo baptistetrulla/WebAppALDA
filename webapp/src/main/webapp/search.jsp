@@ -18,7 +18,7 @@
 	<div class="container">
 		<h1 class="title-form">Ventes globales</h1>
 		
-		<form method="POST" id="search-form" class="form-inline" action="/SearchWithCriteriaServlet">
+		<form method="POST" id="search-form" class="form-inline" action="/SearchWithCriteria">
 		    <div class="form-group">
 				<label for="selectPrice">Prix : </label>
 				<select class="form-control" id="selectPrice" name="selectPrice">
@@ -110,7 +110,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
+									<a type="button" class="btn btn-primary" href="/DetailsAnnounce?announceId=${sale.id}">Voir en détails</a>
 							      </div>
 							      </form>
 							    </div>
@@ -166,7 +166,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
+									<a type="button" class="btn btn-primary" href="/DetailsAnnounce?announceId=${sale.id}">Voir en détails</a>
 							      </div>
 							    </div>
 							</div>

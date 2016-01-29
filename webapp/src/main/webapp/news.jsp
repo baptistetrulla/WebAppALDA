@@ -18,7 +18,7 @@
 	<div class="container">
 		<h1 class="title-form">Ventes selon vos critères de recherche enregistrés</h1>
 		
-		<form method="POST" id="save-criteria-form" class="form-inline" action="/SaveCriteriasServlet">
+		<form method="POST" id="save-criteria-form" class="form-inline" action="/SaveCriterias">
 		    <div class="form-group">
 				<label for="selectPrice">Prix : </label>
 				<select class="form-control" id="selectPrice" name="selectPrice">
