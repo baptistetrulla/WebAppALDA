@@ -6,42 +6,35 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
 	
-	private Connection connection = null;
+	private static volatile Connection instance = null;
 	
 	public ConnectionDB(){
-		if(this.connection==null){
-			this.connection = createConnection();
-		}
+		super();
 	}
 	
-	public Connection getConnection() {
-		return connection;
+	public final static Connection getInstance() {
+		if (ConnectionDB.instance == null) {
+            synchronized(ConnectionDB.class) {
+              if (ConnectionDB.instance == null) {
+            	try {
+          			Class.forName("com.mysql.jdbc.Driver");
+          		} catch (ClassNotFoundException e) {
+          			e.printStackTrace();
+          		}
+          	    String url = "jdbc:mysql://localhost:3306/javaee";
+          	    String user = "root";
+          	    String password = "";
+          	    try {
+          	    	instance = DriverManager.getConnection(url, user, password);
+          	    	System.out.println("Connection completed.");
+          	    } catch (SQLException ex) {
+          	    	System.out.println(ex.getMessage());
+          	    }
+          	    finally{
+          	    }
+              }
+           }
+        }
+        return ConnectionDB.instance;
 	}
-
-	public void setConnection(Connection connection) {
-		this.connection = connection;
-	}
-
-	public Connection createConnection(){
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		Connection connection = null;
-
-	    String url = "jdbc:mysql://localhost:3306/javaee";
-	    String user = "root";
-	    String password = "root";
-	    try {
-	    	connection = DriverManager.getConnection(url, user, password);
-	    	System.out.println("Connection completed.");
-	    } catch (SQLException ex) {
-	    	System.out.println(ex.getMessage());
-	    }
-	    finally{
-	    }
-	    return connection;
-	}
-
 }
