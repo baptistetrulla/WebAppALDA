@@ -34,7 +34,7 @@ public class MainPageServlet extends HttpServlet {
 			allAnnounces.get(i).setPhotos(photos);
 		}
 
-		req.getSession().setAttribute("recentSales", allAnnounces);
+		req.setAttribute("recentSales", allAnnounces);
 		req.getRequestDispatcher("/search.jsp").forward(req, resp);
 	}
 

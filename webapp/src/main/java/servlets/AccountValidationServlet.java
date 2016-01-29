@@ -56,7 +56,7 @@ public class AccountValidationServlet extends HttpServlet {
 		String cellnumber = "" + request.getParameter("cellnumber");
 		String email = "" + request.getParameter("email");
 
-		Person userInSession = (Person) request.getAttribute("user");
+		Person userInSession = (Person) request.getSession().getAttribute("user");
 
 		if (userInSession.getEmail().equals(email) && userInSession.getPass().equals(password)
 				&& userInSession.getPass().equals(password_confirm)) {

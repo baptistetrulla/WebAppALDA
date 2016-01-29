@@ -41,12 +41,12 @@ public class ProfileServlet extends HttpServlet {
 			allAnnounces.get(i).setPhotos(photos);
 		}
 
-		req.getSession().setAttribute("userSales", allAnnounces);
+		req.setAttribute("userSales", allAnnounces);
 		
 		PersonDAO pDao = new PersonDAO();
 		Person p = pDao.getPersonByID(Integer.parseInt(req.getParameter("userid")));
 		
-		req.getSession().setAttribute("userProfile", p);
+		req.setAttribute("userProfile", p);
 		
 		req.getRequestDispatcher("./profile.jsp").forward(req, resp);
 	}

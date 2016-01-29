@@ -69,7 +69,7 @@
 		  </a>
 		</div>
 		
-		<button class="btn btn-lg btn-primary" type="button" onclick="buy(${sale.id})">J'achète !</button>
+		<a class="btn btn-lg btn-primary" type="button" href="Payment?announceId=${sale.id}">J'achète !</a>
 	</div>
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

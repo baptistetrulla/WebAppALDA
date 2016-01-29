@@ -47,7 +47,7 @@ public class RegisterValidationServlet extends HttpServlet {
 
 		PersonDAO pDao = new PersonDAO();
 		Person p = new Person(firstname, lastname, email, password, username, address, city, cellnumber, false);
-		request.getSession().setAttribute("validParams", p);
+		request.setAttribute("validParams", p);
 
 		if (!pDao.doesPersonByEmailOrUsernameAlreadyExists(email, username)) {
 			pDao.insertPerson(p);

@@ -79,7 +79,7 @@ public class SearchWithCriteriaServlet extends HttpServlet {
 			resultSearch.get(i).setPhotos(photos);
 		}
 
-		request.getSession().setAttribute("recentSales", resultSearch);
+		request.setAttribute("recentSales", resultSearch);
 
 		request.getRequestDispatcher("./search.jsp").forward(request, response);
 

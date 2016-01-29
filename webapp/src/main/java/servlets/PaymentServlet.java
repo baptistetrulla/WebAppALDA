@@ -19,26 +19,24 @@ import dao.PersonDAO;
 import dao.PhotoDAO;
 
 /**
- * Servlet implementation class DetailsAnnounceServlet
+ * Servlet implementation class PaymentServlet
  */
-@WebServlet("/DetailsAnnounce")
-public class DetailsAnnounceServlet extends HttpServlet {
+@WebServlet("/Payment")
+public class PaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PaymentServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public DetailsAnnounceServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = null;
 
 		Announce announce = new Announce();
@@ -46,9 +44,9 @@ public class DetailsAnnounceServlet extends HttpServlet {
 		PhotoDAO phoDao = new PhotoDAO();
 		List<Photo> photos = new ArrayList<Photo>();
 
-		photos = phoDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("saleid")));
+		photos = phoDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("announceId")));
 
-		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("saleid")));
+		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("announceId")));
 		announce.setPhotos(photos);
 		
 		request.setAttribute("sale", announce);
@@ -58,16 +56,14 @@ public class DetailsAnnounceServlet extends HttpServlet {
 		
 		request.setAttribute("vendor", p);
 		
-		request.getRequestDispatcher("details-announce.jsp").forward(request, response);
-
+		request.getRequestDispatcher("payment.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
