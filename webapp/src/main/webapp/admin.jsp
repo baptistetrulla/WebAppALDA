@@ -71,8 +71,8 @@
 					<c:forEach var="sale" items="${sales}">
 						<tr>
 							<td>
-								<a href="#" onclick="showProfile(${sale.userId})">
-							    	<c:out value="${sale.userFirstname} ${sale.userLastname}"/>
+								<a href="/Profile?userid=${sale.userID}">
+							    	Voir le profil
 							    </a>
 							</td>
 							<td>${sale.price}</td>
@@ -106,18 +106,18 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach var="user" items="${users}">
+					<c:forEach var="userAdmin" items="${users}">
 						<tr>
 							<td>
-								<a href="#" onclick="showProfile(${user.id})">
-							    	<c:out value="${user.firstname} ${user.lastname}"/>
+								<a href="/Profile?userid=${userAdmin.id}">
+							    	<c:out value="${userAdmin.firstname} ${userAdmin.lastname}"/>
 							    </a>
 							</td>
-							<td>${user.username}</td>
-							<td><c:out value="${user.address}, ${user.city}"/></td>
-							<td>${user.cellnumber}</td>
-							<td>${user.email}</td>
-							<td>${user.isAdmin}</td>
+							<td>${userAdmin.username}</td>
+							<td><c:out value="${userAdmin.address}, ${userAdmin.city}"/></td>
+							<td>${userAdmin.cellnumber}</td>
+							<td>${userAdmin.email}</td>
+							<td>${userAdmin.isAdmin}</td>
 						</tr>
 					</c:forEach>
 					</tbody>

@@ -18,25 +18,18 @@
 	<div class="container">
 		<h1 class="title-form">Détails de l'annonce</h1>
 		
-<!-- 		<h3> -->
-<%-- 		    <a href="#" onclick="showProfile(${sale.userId})"> --%>
-<%-- 	    	    <c:out value="${sale.userFirstname} ${sale.userLastname}"/> --%>
-<!-- 	        </a> -->
-<!-- 	    </h3> -->
+		<h3>Vendeur : 
+		    <a href="/Profile?userid=${vendor.id}">
+	    	    <c:out value="${vendor.firstname} ${vendor.lastname}"/>
+	        </a>
+	    </h3>
 		
-<!-- 		<h3> -->
-<%-- 		    <a href="#" onclick="showProfile(${sale.userId})">${sale.username}</a> --%>
-<!-- 	    </h3> -->
+		<h3>Identifiant : ${vendor.username}</h3>
 		<h3>Prix : ${sale.price}</h3>
-		
 		<h3>Type : ${sale.type}</h3>
-		
 		<h3>Surface : ${sale.surface}</h3>
-		
 		<h3>Adresse : ${sale.address}</h3>
-		
 		<h3>Ville : ${sale.city}</h3>
-		
 		<h3>Description : ${sale.description}</h3>
 		
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

@@ -45,6 +45,7 @@ public class AnnounceDAO {
 				announce.setAddress(result.getString(5));
 				announce.setCity(result.getString(6));
 				announce.setDescription(result.getString(7));
+				announce.setUserID(result.getInt(8));
 
 				if (result.getString(8).equals("false"))
 					announce.setExpired(false);
@@ -79,6 +80,7 @@ public class AnnounceDAO {
 				announce.setAddress(result.getString(5));
 				announce.setCity(result.getString(6));
 				announce.setDescription(result.getString(7));
+				announce.setUserID(result.getInt(8));
 
 				if (result.getString(8).equals("false"))
 					announce.setExpired(false);
@@ -90,6 +92,42 @@ public class AnnounceDAO {
 			e.printStackTrace();
 		}
 		return announce;
+	}
+	
+	public List<Announce> getAnnouncesByUserID(int userID) {
+		ResultSet result = null;
+		List<Announce> announces = new ArrayList<Announce>();
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.announce WHERE announce.userID='" + userID + "';";
+		Announce announce = new Announce();
+
+		try {
+			statement = connectiondb.getInstance().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+
+				announce.setId(result.getInt(1));
+				announce.setPrice(Float.parseFloat("" + result.getInt(2)));
+				announce.setType(result.getString(3));
+				announce.setSurface(Float.parseFloat("" + result.getString(4)));
+				announce.setAddress(result.getString(5));
+				announce.setCity(result.getString(6));
+				announce.setDescription(result.getString(7));
+				announce.setUserID(result.getInt(8));
+
+				if (result.getString(8).equals("false"))
+					announce.setExpired(false);
+				else
+					announce.setExpired(true);
+				
+				announces.add(announce);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return announces;
 	}
 
 	public void insertAnnounce(Announce a) {

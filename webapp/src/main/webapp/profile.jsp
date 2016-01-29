@@ -19,18 +19,18 @@
 		<h1 class="title-form">Profil de l'utilisateur</h1>
 		
 		<div class="row">
-			<h3>Identifiant : ${user.username}"</h3>
-			<h3>Prénom Nom : <c:out value="${user.firstname} ${user.lastname}"></c:out></h3>
-			<h3>Adresse : <c:out value="${user.address} ${user.city}"></c:out></h3>
-			<h3>Téléphone : ${user.cellnumber}"</h3>
-			<h3>E-mail : ${user.email}</h3>
+			<h3>Identifiant : ${userProfile.username}"</h3>
+			<h3>Prénom Nom : <c:out value="${userProfile.firstname} ${userProfile.lastname}"></c:out></h3>
+			<h3>Adresse : <c:out value="${userProfile.address} ${userProfile.city}"></c:out></h3>
+			<h3>Téléphone : ${userProfile.cellnumber}"</h3>
+			<h3>E-mail : ${userProfile.email}</h3>
 		</div>
 		
 		<div class="row">
 			<c:choose>
 				<c:when test="${empty userSales}">
 					<h3 align="center">Cet utilisateur n'a pas de biens en vente</h3>
-					<h3 align="center"><a href="/Sales">Voir toutes les autres annonces ?</a></h3>
+					<h3 align="center"><a href="/Index">Voir toutes les autres annonces ?</a></h3>
 				</c:when>
 				<c:otherwise>
 					<div class="hidden-xs hidden-sm col-md-5 no-pad" id="left-side">

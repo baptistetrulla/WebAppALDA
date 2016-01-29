@@ -33,6 +33,7 @@ CREATE TABLE `announce` (
   `city` varchar(250) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `expired` varchar(45) NOT NULL,
+  `userID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,7 +44,7 @@ CREATE TABLE `announce` (
 
 LOCK TABLES `announce` WRITE;
 /*!40000 ALTER TABLE `announce` DISABLE KEYS */;
-INSERT INTO `announce` VALUES (1,35000,'T1',23,'362 avenue de Georges','Bordeaux','Studio idéal pour étudiant','0'),(2,112000,'T4',88,'1 rue de la libération','Bordeaux','Maginifique maison située proche des commerces','0'),(3,55000,'T2',38,'65 avenue couteau','Lille','Studio très bien décoré, voisinage calme','0'),(4,254000,'T5',120,'18 rue du général de Gaule','Lyon','Maginifique maison avec jardin et terrasse située proche du centre ville','0');
+INSERT INTO `announce` VALUES (1,35000,'T1',23,'362 avenue de Georges','Bordeaux','Studio idéal pour étudiant','0',1),(2,112000,'T4',88,'1 rue de la libération','Bordeaux','Maginifique maison située proche des commerces','0',1),(3,55000,'T2',38,'65 avenue couteau','Lille','Studio très bien décoré, voisinage calme','0',1),(4,254000,'T5',120,'18 rue du général de Gaule','Lyon','Maginifique maison avec jardin et terrasse située proche du centre ville','0',3);
 /*!40000 ALTER TABLE `announce` ENABLE KEYS */;
 UNLOCK TABLES;
 

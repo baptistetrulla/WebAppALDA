@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.Announce;
+import beans.Person;
 import beans.Photo;
 import dao.AnnounceDAO;
+import dao.PersonDAO;
 import dao.PhotoDAO;
 
 /**
@@ -37,19 +39,26 @@ public class DetailsAnnounceServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("hello");
 		RequestDispatcher dispatcher = null;
 
 		Announce announce = new Announce();
 		AnnounceDAO aDao = new AnnounceDAO();
-		PhotoDAO pDao = new PhotoDAO();
+		PhotoDAO phoDao = new PhotoDAO();
 		List<Photo> photos = new ArrayList<Photo>();
 
-		photos = pDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("announceId")));
+		photos = phoDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("announceId")));
 
 		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("announceId")));
 		announce.setPhotos(photos);
+		
 		request.getSession().setAttribute("sale", announce);
+		
+		PersonDAO perDao = new PersonDAO();
+		System.out.println("id = " + announce.getId());
+		Person p = perDao.getPersonByID(announce.getUserID());
+		
+		request.getSession().setAttribute("vendor", p);
+		
 		dispatcher = request.getRequestDispatcher("details-announce.jsp");
 		dispatcher.forward(request, response);
 

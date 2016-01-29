@@ -59,6 +59,43 @@ public class PersonDAO {
 
 		return persons;
 	}
+	
+	public Person getPersonByID(int userID) {
+		ResultSet result = null;
+		Person person = new Person();
+
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.person WHERE person.id = '" + userID + "';";
+
+		try {
+			statement = connectiondb.getInstance().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+
+				person.setId(userID);
+				person.setEmail(result.getString(2));
+				person.setPass(result.getString(3));
+				person.setFirstname(result.getString(4));
+				person.setLastname(result.getString(5));
+				person.setUsername(result.getString(6));
+				person.setAddress(result.getString(7));
+				person.setCity(result.getString(8));
+				person.setCellnumber(result.getString(9));
+
+				if (result.getString(10).equals("false"))
+					person.setAdmin(false);
+				else
+					person.setAdmin(true);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return person;
+	}
 
 	public Person getPersonByEmailAndPassword(String email, String password) {
 		ResultSet result = null;

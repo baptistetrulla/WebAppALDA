@@ -13,6 +13,7 @@ public class Announce implements java.io.Serializable {
 	private String city;
 	private String description;
 	private boolean expired;
+	private int userID;
 
 	private List<Photo> photos = new ArrayList<Photo>();
 
@@ -24,11 +25,11 @@ public class Announce implements java.io.Serializable {
 		this.city = "";
 		this.description = "";
 		this.expired = false;
-
+		this.userID = 0;
 	};
 
 	public Announce(float price, String type, float surface, String address, String city, String description,
-			boolean expired) {
+			boolean expired, int userID) {
 		this.price = price;
 		this.type = type;
 		this.surface = surface;
@@ -36,7 +37,7 @@ public class Announce implements java.io.Serializable {
 		this.city = city;
 		this.description = description;
 		this.expired = expired;
-
+		this.userID = userID;
 	}
 
 	public float getPrice() {
@@ -109,6 +110,14 @@ public class Announce implements java.io.Serializable {
 
 	public void setPhotos(List<Photo> photos) {
 		this.photos = photos;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
 }
