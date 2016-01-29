@@ -18,7 +18,7 @@
 	<div class="container">
 		<h1 class="title-form">Création d'une annonce</h1>
 		
-		<form method="POST" id="create-announce-form" class="form-signin" action="/CreateAnnounceValidationServlet">
+		<form method="POST" id="create-announce-form" class="form-signin" action="/CreateAnnounceValidation">
 		    <input type="hidden" name="uploadedPhotoPath1" id="uploadedPhotoPath1" value="${photoUploadedpath1}" />
             <input type="hidden" name="uploadedImageName1" id="uploadedImageName1" value="${uploadedImageName1}" />
             <input type="hidden" name="edit1" value="true" />

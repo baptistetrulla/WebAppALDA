@@ -15,7 +15,7 @@
 	<div class="container">
 		<h1 class="title-form">Création d'un compte</h1>
 		
-		<form method="POST" id="register-form" class="form-signin" action="/RegisterValidationServlet">
+		<form method="POST" id="register-form" class="form-signin" action="/RegisterValidation">
 			<h3>Seuls l'e-mail et le mot de passe sont obligatoires</h3>
 			
 			<div class="form-group">

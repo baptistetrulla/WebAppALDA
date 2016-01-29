@@ -19,7 +19,7 @@ import dao.PhotoDAO;
 /**
  * Servlet implementation class SearchWithCriteriaServlet
  */
-@WebServlet("/SearchWithCriteriaServlet")
+@WebServlet("/SearchWithCriteria")
 public class SearchWithCriteriaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

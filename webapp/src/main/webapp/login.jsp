@@ -15,7 +15,7 @@
 	<div class="container">
 		<h1 class="title-form">Authentification</h1>
 		
-		<form method="POST" id="login-form" class="form-signin" action="/LoginValidationServlet">
+		<form method="POST" id="login-form" class="form-signin" action="/LoginValidation">
 			<h3 class="form-signin-heading">Identifiez vous</h3>
 			
 			<input type="text" class="form-control" name="email" id="email" placeholder="Email" required autofocus/>

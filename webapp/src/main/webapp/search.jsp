@@ -18,7 +18,7 @@
 	<div class="container">
 		<h1 class="title-form">Ventes globales</h1>
 		
-		<form method="POST" id="search-form" class="form-inline" action="/SearchWithCriteriaServlet">
+		<form method="POST" id="search-form" class="form-inline" action="/SearchWithCriteria"> 
 		    <div class="form-group">
 				<label for="selectPrice">Prix : </label>
 				<select class="form-control" id="selectPrice" name="selectPrice">

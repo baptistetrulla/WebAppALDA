@@ -17,9 +17,9 @@
 	
 	<div class="container">
 		<h1 class="title-form">Modification d'une annonce</h1>
-		<button class="btn btn-lg btn-warning" href="/DeleteAnnounceServlet">Supprimer cette annonce</button>
+		<button class="btn btn-lg btn-warning" href="/DeleteAnnounce">Supprimer cette annonce</button>
 		
-		<form method="POST" id="create-announce-form" class="form-signin" action="/CreateAnnounceValidationServlet">
+		<form method="POST" id="create-announce-form" class="form-signin" action="/CreateAnnounceValidation">
 		    <input type="hidden" name="uploadedPhotoPath1" id="uploadedPhotoPath1" value="${sale.photo1Path}" />
             <input type="hidden" name="uploadedImageName1" id="uploadedImageName1" value="${sale.photo1Name}" />
             <input type="hidden" name="edit1" value="true" />

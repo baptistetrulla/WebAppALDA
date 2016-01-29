@@ -22,7 +22,7 @@ import dao.PhotoDAO;
 /**
  * Servlet implementation class LoginValidationServlet
  */
-@WebServlet("/LoginValidationServlet")
+@WebServlet("/LoginValidation")
 public class LoginValidationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

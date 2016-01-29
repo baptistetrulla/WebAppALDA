@@ -15,7 +15,7 @@ import dao.PersonDAO;
 /**
  * Servlet implementation class AccountValidationServlet
  */
-@WebServlet("/AccountValidationServlet")
+@WebServlet("/AccountValidation")
 public class AccountValidationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

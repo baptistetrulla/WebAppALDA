@@ -15,7 +15,7 @@ import dao.AnnounceDAO;
 /**
  * Servlet implementation class CreateAnnounceServlet
  */
-@WebServlet("/CreateAnnounceValidationServlet")
+@WebServlet("/CreateAnnounceValidation")
 public class CreateAnnounceValidationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -65,7 +65,7 @@ public class CreateAnnounceValidationServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 
 			} catch (Exception e) {
-				dispatcher = request.getRequestDispatcher("/CreateAnnounceServlet");
+				dispatcher = request.getRequestDispatcher("/CreateAnnounce");
 
 				dispatcher.forward(request, response);
 			}
