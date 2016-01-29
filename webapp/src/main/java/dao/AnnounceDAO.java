@@ -45,12 +45,13 @@ public class AnnounceDAO {
 				announce.setAddress(result.getString(5));
 				announce.setCity(result.getString(6));
 				announce.setDescription(result.getString(7));
-				announce.setUserID(result.getInt(8));
 
 				if (result.getString(8).equals("false"))
 					announce.setExpired(false);
 				else
 					announce.setExpired(true);
+				
+				announce.setUserID(result.getInt(9));
 
 				announces.add(announce);
 			}
@@ -80,12 +81,13 @@ public class AnnounceDAO {
 				announce.setAddress(result.getString(5));
 				announce.setCity(result.getString(6));
 				announce.setDescription(result.getString(7));
-				announce.setUserID(result.getInt(8));
-
+				
 				if (result.getString(8).equals("false"))
 					announce.setExpired(false);
 				else
 					announce.setExpired(true);
+				
+				announce.setUserID(result.getInt(9));
 
 			}
 		} catch (SQLException e) {
@@ -119,12 +121,13 @@ public class AnnounceDAO {
 				announce.setAddress(result.getString(5));
 				announce.setCity(result.getString(6));
 				announce.setDescription(result.getString(7));
-				announce.setUserID(result.getInt(8));
 
 				if (result.getString(8).equals("false"))
 					announce.setExpired(false);
 				else
 					announce.setExpired(true);
+				
+				announce.setUserID(result.getInt(9));
 
 				announces.add(announce);
 			}

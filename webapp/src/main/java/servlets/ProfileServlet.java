@@ -25,8 +25,10 @@ public class ProfileServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if(req.getSession() == null || req.getSession().getAttribute("user") == null)
+		if(req.getSession() == null || req.getSession().getAttribute("user") == null) {
 			req.getRequestDispatcher("/Login").forward(req, resp);
+			return;
+		}
 		
 		AnnounceDAO aDao = new AnnounceDAO();
 		List<Announce> allAnnounces = aDao.getAnnouncesByUserID(Integer.parseInt(req.getParameter("userid")));

@@ -19,10 +19,10 @@
 		<h1 class="title-form">Profil de l'utilisateur</h1>
 		
 		<div class="row">
-			<h3>Identifiant : ${userProfile.username}"</h3>
+			<h3>Identifiant : ${userProfile.username}</h3>
 			<h3>Prénom Nom : <c:out value="${userProfile.firstname} ${userProfile.lastname}"></c:out></h3>
 			<h3>Adresse : <c:out value="${userProfile.address} ${userProfile.city}"></c:out></h3>
-			<h3>Téléphone : ${userProfile.cellnumber}"</h3>
+			<h3>Téléphone : ${userProfile.cellnumber}</h3>
 			<h3>E-mail : ${userProfile.email}</h3>
 		</div>
 		
@@ -33,7 +33,7 @@
 					<h3 align="center"><a href="/Index">Voir toutes les autres annonces ?</a></h3>
 				</c:when>
 				<c:otherwise>
-					<div class="hidden-xs hidden-sm col-md-5 no-pad" id="left-side">
+					<div class="col-xs-12 col-md-6" id="left-side">
 		   				<c:forEach var="sale" items="${userSales}" varStatus="loopStatusSale">
 							<c:if test="${loopStatusSale.index % 2 == 0}">
 							    <div class="row">
@@ -80,7 +80,7 @@
 										<h3>Surface : ${sale.surface}</h3>
 										<h3>Adresse : ${sale.address}</h3>
 										<h3>Ville : ${sale.city}</h3>
-										<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+										<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
 								      </div>
 								    </div>
 								</div>
@@ -88,7 +88,7 @@
 						</c:forEach>
 					</div>
 					
-					<div class="col-md-5 no-pad" id="right-side">
+					<div class="col-xs-12 col-md-6 no-pad" id="right-side">
 						<c:forEach var="sale" items="${userSales}" varStatus="loopStatusSale">
 							<c:if test="${loopStatusSale.index % 2 != 0}">
 							    <div class="row">
@@ -135,7 +135,7 @@
 										<h3>Surface : ${sale.surface}</h3>
 										<h3>Adresse : ${sale.address}</h3>
 										<h3>Ville : ${sale.city}</h3>
-										<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+										<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
 								      </div>
 								    </div>
 								</div>

@@ -104,15 +104,13 @@
 									    <span class="sr-only">Suivante</span>
 									  </a>
 								  </div>
-							      <form method="GET" id="search-form" action="/DetailsAnnounceServlet">
 							      <div class="caption">
 							        <h3>Prix : ${sale.price}</h3>
 									<h3>Type : ${sale.type}</h3>
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<input type="hidden" id="announceId" name="announceId" value="${sale.id}"></input>
-									<input type="submit" class="btn btn-primary" value="Voir en détails"></input>
+									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
 							      </div>
 							      </form>
 							    </div>
@@ -162,18 +160,14 @@
 									    <span class="sr-only">Suivante</span>
 									  </a>
 								  </div>
-							      <form method="GET" id="search-form" action="/DetailsAnnounceServlet">
 							      <div class="caption">
 							        <h3>Prix : ${sale.price}</h3>
 									<h3>Type : ${sale.type}</h3>
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<input type="hidden" id="announceId" name="announceId" value="${sale.id}"></input>
-									<input type="submit" class="btn btn-primary" value="Voir en détails"></input>
+									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
 							      </div>
-							      </form>
-							      
 							    </div>
 							</div>
 						</c:if>
