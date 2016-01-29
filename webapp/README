@@ -1,0 +1,63 @@
+========================================== Projet d'ALDA Master 2 Génie Logiciel ==========================================
+
+
+Etudiants : 
+	- Sylvain EMONET, sylvain.emonet@orange.fr
+	- Baptiste TRULLA, baptiste.trulla@gmail.com
+	
+	
+Informations sur l'application :
+	- Le pom.xml est fonctionnel donc vous pouvez faire un maven clean build, etc...
+	- Nous avons utilisé des JSP pour le Front et des Servlet reliées à des Beans et DAO pour le Back.
+	- Notre application utilise Bootstrap, peu de modifications ont été apportées au framework de base.
+	- L'application autorise la navigation non-connectée pour la page de recherche et la page de détails
+		d'une annonce précise. Toutes les autres sont accessibles uniquement en s'étant login auparavant.
+		Une redirection vers le Login a été implémentée quand c'était le cas.
+
+
+La base de données :
+	- La base de données a été faite via MySQL donc il faut lancer un serveur de base de données similaire.
+	- Le fichier de connexion à la BDD est dans src/main/java/connection.
+	- L'utilisateur se connectant à la base a comme identifiant "root" et un mot de passe vide.
+	- Lorsque que la connexion avec le serveur est fonctionnel, vous pouvez créer la BDD avec notre fichier SQL
+		se situant dans le dossier src/sql. Il créera la structure nécessaire et quelques données.
+	- Voici les identifiants que vous pouvez saisir sur le login pour vous connecter :
+		> email : bob@email.com ; mdp : password
+		Vous aurez alors accés également au panneau d'administration de l'application.
+	
+	
+Le serveur :
+	- Le fichier généré est bien un war comme demandé et déployable sur TomEE.
+	- La configuration du serveur TomEE peut être récupérée dans le dossier src/tomee. 
+		Ce qui est important surtout c'est la balise Context du fichier server.xml,
+		l'attribut path qui doit être vide.
+	- Une fois le déploiement effectué, vous pouvez accéder à la page d'accueil de l'application en tapant :
+		localhost:8080/Index
+		
+
+Les choses que nous n'avons pas pu faire faute de temps :
+	- Le chat
+	- La messagerie
+	- Les notifications
+	- L'ajout d'image pour une annonce
+	- Le système de tri et filtrage
+	- Enregistrer les critères de recherche
+	- La regénération de mot de passe
+	
+
+Les informations complémentaires sur notre projet :
+	- Comme beaucoup d'autres personnes, le temps passé à mettre en place le serveur et la base nous a pris pas mal 
+		la tête il faut avouer. Donc nous avons pas mal de temps par exemple à cause de MIME et les URLs des servlets. 
+	- Nous avons voulu mettre l'accent sur un code propre et fonctionnel dans nos développements. Donc nous avons
+		sous-estimé le temps dont nous avions besoin pour mener à bien le projet.
+	- La structure du projet est complète, c'est-à-dire que l'on peut et sait rapidement ajouter les fichiers manquants
+		pour finir les fonctionnalités que nous n'avons pas développé.
+	
+	
+Si vous avez des retours à nous faire sur notre travail, n'hésitez pas à nous envoyer un mail. 
+
+Bonne réception et bonne lecture.
+
+Bien cordialement.
+
+=============================================================== END OF README ===============================================================
