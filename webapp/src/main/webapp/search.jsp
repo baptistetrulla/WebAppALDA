@@ -53,7 +53,7 @@
 			</div>
 			<div class="form-group">
 				<label for="inputCity">Ville : </label>
-				<input type="text" class="form-control" id="inputCity" placeholder="Ville">
+				<input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Ville">
 			</div>
 			<button type="submit" class="btn btn-primary">Rechercher</button>
 		</form>

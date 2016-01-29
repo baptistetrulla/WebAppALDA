@@ -93,14 +93,17 @@ public class AnnounceDAO {
 		}
 		return announce;
 	}
-	
-	public List<Announce> getAnnouncesByUserID(int userID) {
-		ResultSet result = null;
-		List<Announce> announces = new ArrayList<Announce>();
-		java.sql.PreparedStatement statement = null;
-		String request = "SELECT * FROM javaee.announce WHERE announce.userID='" + userID + "';";
-		Announce announce = new Announce();
 
+	public List<Announce> getAnnouncesByCriterias(int price_min, int price_max, String type, int surface_min,
+			int surface_max, String city) {
+		ResultSet result = null;
+		java.sql.PreparedStatement statement = null;
+		List<Announce> announces = new ArrayList<Announce>();
+
+		String request = "SELECT * FROM javaee.announce WHERE announce.price > " + price_min + " AND announce.price < "
+				+ price_max + " AND announce.type LIKE '%" + type + "%' AND announce.surface > " + surface_min
+				+ " AND announce.surface < " + surface_max + " AND announce.city LIKE '%" + city + "%';";
+		System.out.println(request);
 		try {
 			statement = connectiondb.getInstance().prepareStatement(request);
 			statement.execute();
@@ -108,6 +111,7 @@ public class AnnounceDAO {
 
 			while (result.next()) {
 
+				Announce announce = new Announce();
 				announce.setId(result.getInt(1));
 				announce.setPrice(Float.parseFloat("" + result.getInt(2)));
 				announce.setType(result.getString(3));
@@ -121,7 +125,43 @@ public class AnnounceDAO {
 					announce.setExpired(false);
 				else
 					announce.setExpired(true);
-				
+
+				announces.add(announce);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return announces;
+	}
+
+	public List<Announce> getAnnouncesByUserID(int userID) {
+		ResultSet result = null;
+		List<Announce> announces = new ArrayList<Announce>();
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.announce WHERE announce.userID='" + userID + "';";
+
+		try {
+			statement = connectiondb.getInstance().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+				Announce announce = new Announce();
+
+				announce.setId(result.getInt(1));
+				announce.setPrice(Float.parseFloat("" + result.getInt(2)));
+				announce.setType(result.getString(3));
+				announce.setSurface(Float.parseFloat("" + result.getString(4)));
+				announce.setAddress(result.getString(5));
+				announce.setCity(result.getString(6));
+				announce.setDescription(result.getString(7));
+				announce.setUserID(result.getInt(9));
+
+				if (result.getString(8).equals("false"))
+					announce.setExpired(false);
+				else
+					announce.setExpired(true);
+
 				announces.add(announce);
 			}
 		} catch (SQLException e) {
