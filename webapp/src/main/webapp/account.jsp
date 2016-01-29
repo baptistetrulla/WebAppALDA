@@ -17,7 +17,7 @@
 	
 	<div class="container">
 		<h1 class="title-form">Informations sur votre compte</h1>
-		<button class="btn btn-lg btn-warning" href="/DeleteAccountServlet">Supprimer votre compte</button>
+		<a class="btn btn-lg btn-warning" href="/DeleteAccountServlet">Supprimer votre compte</a>
 		
 		<form method="POST" id="account-form" class="form-signin" action="/AccountValidationServlet">
 			<h3>Seuls l'e-mail et le mot de passe sont obligatoires</h3>

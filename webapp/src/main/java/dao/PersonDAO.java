@@ -65,8 +65,8 @@ public class PersonDAO {
 		Person person = new Person();
 
 		java.sql.PreparedStatement statement = null;
-		String request = "SELECT * FROM javaee.person WHERE person.email = '" + email + "' AND person.pass='"
-				+ password + "';";
+		String request = "SELECT * FROM javaee.person WHERE person.email = '" + email + "' AND person.pass='" + password
+				+ "';";
 
 		try {
 			statement = connectiondb.getInstance().prepareStatement(request);
@@ -131,6 +131,23 @@ public class PersonDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Update failled.");
+		}
+		this.persons = getAllPersons();
+	}
+
+	public void deletePerson(Person p) {
+		Statement statement = null;
+		String request = "DELETE FROM javaee.person WHERE person.email='" + p.getEmail() + "';";
+
+		try {
+			statement = connectiondb.getInstance().createStatement();
+			System.out.println(request);
+			statement.executeUpdate(request);
+			System.out.println("Delete completed.");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Delete failled.");
 		}
 		this.persons = getAllPersons();
 	}
