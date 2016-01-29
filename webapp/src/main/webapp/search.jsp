@@ -64,18 +64,18 @@
 			</c:when>
 			<c:otherwise>
 				<div class="col-xs-12 col-md-6" id="left-side">
-	   				<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
-						<c:if test="${loopStatus.index % 2 == 0}">
+	   				<c:forEach var="sale" items="${recentSales}" varStatus="loopStatusSale">
+						<c:if test="${loopStatusSale.index % 2 == 0}">
 						    <div class="row">
 							    <div class="thumbnail">
-							      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							      <div id="carousel-example-generic-${loopStatusSale.index}" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">
 									    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 									      <c:if test="${loopStatus.index == 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index" class="active"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index" class="active"></li>
 									      </c:if>
 									      <c:if test="${loopStatus.index > 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index"></li>
 									      </c:if>
 									    </c:forEach>
 									  </ol>
@@ -95,11 +95,11 @@
 									    </c:forEach>
 									  </div>
 									
-									  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									  <a class="left carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="prev">
 									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 									    <span class="sr-only">Précédente</span>
 									  </a>
-									  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									  <a class="right carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="next">
 									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 									    <span class="sr-only">Suivante</span>
 									  </a>
@@ -119,18 +119,18 @@
 				</div>
 				
 				<div class="col-xs-12 col-md-6" id="right-side">
-					<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
-						<c:if test="${loopStatus.index % 2 != 0}">
+					<c:forEach var="sale" items="${recentSales}" varStatus="loopStatusSale">
+						<c:if test="${loopStatusSale.index % 2 != 0}">
 						    <div class="row">
 							    <div class="thumbnail">
-							      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							      <div id="carousel-example-generic-${loopStatusSale.index}" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">
 									    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 									      <c:if test="${loopStatus.index == 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index" class="active"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index" class="active"></li>
 									      </c:if>
 									      <c:if test="${loopStatus.index > 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index"></li>
 									      </c:if>
 									    </c:forEach>
 									  </ol>
@@ -150,11 +150,11 @@
 									    </c:forEach>
 									  </div>
 									
-									  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									  <a class="left carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="prev">
 									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 									    <span class="sr-only">Précédente</span>
 									  </a>
-									  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									  <a class="right carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="next">
 									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 									    <span class="sr-only">Suivante</span>
 									  </a>

@@ -1,7 +1,3 @@
-var goToLogin = function() {
-	
-};
-
 var logoff = function() {
 	
 };

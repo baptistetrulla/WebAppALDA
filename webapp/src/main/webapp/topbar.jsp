@@ -1,3 +1,5 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container" style="background-color: #f8f8f8;">
     <div class="navbar-header">
@@ -24,7 +26,7 @@
 	        </c:when>
 	        <c:otherwise>
 	          <ul class="dropdown-menu" id="non-connected-user">
-	            <li><a href="#" onclick="goToLogin()">Se connecter</a></li>
+	            <li><a href="/Login">Se connecter</a></li>
 	          </ul>
 	        </c:otherwise>
           </c:choose>

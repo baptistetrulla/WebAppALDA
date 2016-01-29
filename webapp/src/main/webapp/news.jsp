@@ -4,7 +4,7 @@
 <html lang="fr">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Ventes vous intéressant - WebAppALDA</title>
+	<title>Ventes vous intÃ©ressant - WebAppALDA</title>
 	
 	<link rel="stylesheet" type="text/css" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
@@ -16,7 +16,7 @@
 	<jsp:include page="./topbar.jsp"></jsp:include>
 		
 	<div class="container">
-		<h1 class="title-form">Ventes selon vos critères de recherche enregistrés</h1>
+		<h1 class="title-form">Ventes selon vos critÃ¨res de recherche enregistrÃ©s</h1>
 		
 		<form method="POST" id="save-criteria-form" class="form-inline" action="/SaveCriteriasServlet">
 		    <div class="form-group">
@@ -24,7 +24,7 @@
 				<select class="form-control" id="selectPrice" name="selectPrice">
 				  <c:forEach var="i" begin="0" end="49">
 				    <c:set var="j" value="${i + 1}"></c:set>
-				    <option value="${i}"><c:out value="${i * 25000}"></c:out> à <c:out value="${j * 25000}"></c:out></option>
+				    <option value="${i}"><c:out value="${i * 25000}"></c:out> Ã  <c:out value="${j * 25000}"></c:out>â‚¬</option>
 				  </c:forEach>
 				  <option value="50">+ de 1250000</option>
 				</select>
@@ -46,9 +46,9 @@
 				<select class="form-control" id="selectSurface" name="selectSurface">
 				  <c:forEach var="i" begin="0" end="49">
 				    <c:set var="j" value="${i + 1}"></c:set>
-				    <option value="${i}"><c:out value="${i * 5}"></c:out> à <c:out value="${j * 5}"></c:out>m²</option>
+				    <option value="${i}"><c:out value="${i * 5}"></c:out> Ã  <c:out value="${j * 5}"></c:out>mÂ²</option>
 				  </c:forEach>
-				  <option value="50">+ de 250m²</option>
+				  <option value="50">+ de 250mÂ²</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -59,23 +59,23 @@
 		</form>
 		<c:choose>
 			<c:when test="${empty recentSales}">
-				<h3 align="center">Aucune vente ne correspond actuellement à vos critères de recherche</h3>
+				<h3 align="center">Aucune vente ne correspond actuellement Ã  vos critÃ¨res de recherche</h3>
 				<h3 align="center"><a href="/">Voir toutes les annonces en ligne ?</a></h3>
 			</c:when>
 			<c:otherwise>
 				<div class="col-xs-12 col-md-6" id="left-side">
-	   				<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
-						<c:if test="${loopStatus.index % 2 == 0}">
+	   				<c:forEach var="sale" items="${recentSales}" varStatus="loopStatusSale">
+						<c:if test="${loopStatusSale.index % 2 == 0}">
 						    <div class="row">
 							    <div class="thumbnail">
-							      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							      <div id="carousel-example-generic-${loopStatusSale.index}" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">
 									    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 									      <c:if test="${loopStatus.index == 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index" class="active"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index" class="active"></li>
 									      </c:if>
 									      <c:if test="${loopStatus.index > 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index"></li>
 									      </c:if>
 									    </c:forEach>
 									  </ol>
@@ -95,11 +95,11 @@
 									    </c:forEach>
 									  </div>
 									
-									  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									  <a class="left carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="prev">
 									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-									    <span class="sr-only">Précédente</span>
+									    <span class="sr-only">PrÃ©cÃ©dente</span>
 									  </a>
-									  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									  <a class="right carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="next">
 									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 									    <span class="sr-only">Suivante</span>
 									  </a>
@@ -110,7 +110,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en dÃ©tails</button>
 							      </div>
 							    </div>
 							</div>
@@ -119,18 +119,18 @@
 				</div>
 				
 				<div class="col-xs-12 col-md-6" id="right-side">
-					<c:forEach var="sale" items="${recentSales}" varStatus="loopStatus">
-						<c:if test="${loopStatus.index % 2 != 0}">
+					<c:forEach var="sale" items="${recentSales}" varStatus="loopStatusSale">
+						<c:if test="${loopStatusSale.index % 2 != 0}">
 						    <div class="row">
 							    <div class="thumbnail">
-							      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							      <div id="carousel-example-generic-${loopStatus.index}" class="carousel slide" data-ride="carousel">
 									  <ol class="carousel-indicators">
 									    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 									      <c:if test="${loopStatus.index == 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index" class="active"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index" class="active"></li>
 									      </c:if>
 									      <c:if test="${loopStatus.index > 0}">
-									        <li data-target="#carousel-example-generic" data-slide-to="loopStatus.index"></li>
+									        <li data-target="#carousel-example-generic-${loopStatusSale.index}" data-slide-to="loopStatus.index"></li>
 									      </c:if>
 									    </c:forEach>
 									  </ol>
@@ -150,11 +150,11 @@
 									    </c:forEach>
 									  </div>
 									
-									  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+									  <a class="left carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="prev">
 									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-									    <span class="sr-only">Précédente</span>
+									    <span class="sr-only">PrÃ©cÃ©dente</span>
 									  </a>
-									  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+									  <a class="right carousel-control" href="#carousel-example-generic-${loopStatusSale.index}" role="button" data-slide="next">
 									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 									    <span class="sr-only">Suivante</span>
 									  </a>
@@ -165,7 +165,7 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en détails</button>
+									<button type="button" class="btn btn-primary" onclick="showSale(${sale.id})">Voir en dÃ©tails</button>
 							      </div>
 							    </div>
 							</div>
