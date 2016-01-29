@@ -80,7 +80,7 @@
 							<td>${sale.surface}</td>
 							<td><c:out value="${sale.address}, ${sale.city}"/></td>
 							<td>${sale.description}</td>
-							<td><a href="/DetailsAnnounce?announceId=${sale.id}">Accéder</a></td>
+							<td><a type="button" href="/DetailsAnnounce?saleid=${sale.id}">Accéder</a></td>
 						</tr>
 					</c:forEach>
 					</tbody>

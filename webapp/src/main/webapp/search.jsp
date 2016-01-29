@@ -110,10 +110,9 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
-									<button type="button" class="btn btn-success" href="AddFavoriteAnnounce?saleid=${sale.id}">Favoris</button>
+									<a type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</a>
+									<a type="button" class="btn btn-success" href="/AddFavoriteAnnounce?saleid=${sale.id}">Favoris</a>
 							      </div>
-							      </form>
 							    </div>
 							</div>
 						</c:if>
@@ -167,8 +166,8 @@
 									<h3>Surface : ${sale.surface}</h3>
 									<h3>Adresse : ${sale.address}</h3>
 									<h3>Ville : ${sale.city}</h3>
-									<button type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</button>
-									<button type="button" class="btn btn-success" href="AddFavoriteAnnounce?saleid=${sale.id}">Favoris</button>
+									<a type="button" class="btn btn-primary" href="/DetailsAnnounce?saleid=${sale.id}">Voir en détails</a>
+									<a type="button" class="btn btn-success" href="/AddFavoriteAnnounce?saleid=${sale.id}">Favoris</a>
 							      </div>
 							    </div>
 							</div>

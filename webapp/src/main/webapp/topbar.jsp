@@ -19,7 +19,7 @@
 	            </c:if>
 	            <li><a href="/CreateAnnounce">Créer une annonce</a></li>
 	            <li><a href="/Profile?userid=${userID}">Mes annonces</a></li>
-	            <li><a href="#" onclick="showFavorites(${user.id})">Mes favoris</a></li>
+	            <li><a href="/Favorites">Mes favoris</a></li>
 	            <li><a href="#" onclick="showMessages()">Mes messages</a></li>
 	            <li><a href="#" onclick="showNotifications()">Mes notifications</a></li>
 	            <li><a href="/Account">Mon compte</a></li>

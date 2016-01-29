@@ -46,9 +46,9 @@ public class DetailsAnnounceServlet extends HttpServlet {
 		PhotoDAO phoDao = new PhotoDAO();
 		List<Photo> photos = new ArrayList<Photo>();
 
-		photos = phoDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("announceId")));
+		photos = phoDao.getAllPhotosForAnnounceId(Integer.parseInt(request.getParameter("saleid")));
 
-		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("announceId")));
+		announce = aDao.getAnnounce(Integer.parseInt(request.getParameter("saleid")));
 		announce.setPhotos(photos);
 		
 		request.getSession().setAttribute("sale", announce);
