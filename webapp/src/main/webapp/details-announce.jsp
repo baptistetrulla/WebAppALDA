@@ -52,12 +52,12 @@
 		    <c:forEach var="photo" items="${sale.photos}" varStatus="loopStatus">
 			  <c:if test="${loopStatus.index == 0}">  
 			    <div class="item active">
-			      <img src="/assets/${photo.dir}" alt="Photo">
+			      <img class="carousel-photo" src="/assets/${photo.dir}" alt="Photo">
 			    </div>
 			  </c:if>
 			  <c:if test="${loopStatus.index > 0}">
 			    <div class="item">
-			      <img src="/assets/${photo.dir}" alt="Photo">
+			      <img class="carousel-photo" src="/assets/${photo.dir}" alt="Photo">
 			    </div>
 			  </c:if>
 		    </c:forEach>
