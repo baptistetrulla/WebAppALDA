@@ -46,10 +46,10 @@ public class PersonDAO {
 				person.setCity(result.getString(8));
 				person.setCellnumber(result.getString(9));
 
-				if (result.getString(10).equals("false"))
-					person.setAdmin(false);
-				else
+				if (result.getString(10).equals("true"))
 					person.setAdmin(true);
+				else
+					person.setAdmin(false);
 
 				persons.add(person);
 			}
@@ -59,7 +59,7 @@ public class PersonDAO {
 
 		return persons;
 	}
-	
+
 	public Person getPersonByID(int userID) {
 		ResultSet result = null;
 		Person person = new Person();
@@ -133,6 +133,29 @@ public class PersonDAO {
 		}
 
 		return person;
+	}
+
+	public boolean doesPersonByEmailOrUsernameAlreadyExists(String email, String username) {
+		ResultSet result = null;
+		Person person = new Person();
+
+		java.sql.PreparedStatement statement = null;
+		String request = "SELECT * FROM javaee.person WHERE person.email = '" + email + "' OR person.username = '"
+				+ username + "';";
+
+		try {
+			statement = connectiondb.getInstance().prepareStatement(request);
+			statement.execute();
+			result = statement.getResultSet();
+
+			while (result.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 	public void insertPerson(Person p) {

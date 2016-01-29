@@ -68,7 +68,7 @@
 				<div class="col-xs-6 col-sm-6 col-lg-7">
 					<input type="text" value="${validParams.cellnumber}" maxlength="10"
 						   class="form-control" id="cellnumber" name="cellnumber"
-						   placeholder="Ville" required>
+						   placeholder="Numéro téléphonne" required>
 				</div>
 			</div>
 			
